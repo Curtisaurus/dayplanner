@@ -37,6 +37,9 @@ timeBlocks.each(function() {
     }
 })
 
+// renders saved notes on page load
+renderNotes();
+
 // saves text content of fillable areas on button click
 $(".row").delegate("button", "click", function() {
     event.stopPropagation();
@@ -50,8 +53,9 @@ $(".row").delegate("button", "click", function() {
 });
 
 function saveNote(scheduledNote) { 
-    //checks to see if localNotes array is populated
+    //checks to see if localNotes array is populated with savable notes time marker
     if (localNotes.some(notes => notes.time === scheduledNote.time)) {
+        // loops through localNotes to find that same time marker and changes object.note entry
         for (i = 0; i < localNotes.length; i++) {
             if (localNotes[i].time == scheduledNote.time) {
                 localNotes[i] = scheduledNote;
@@ -62,8 +66,16 @@ function saveNote(scheduledNote) {
     }
 
     alert("Note saved");
-    console.log(localNotes);
 
     localStorage.setItem("savedNotes", JSON.stringify(localNotes));
 
+}
+
+// loops through retrieved notes and adds text to relevant timeblock id's textarea
+function renderNotes() {
+    for (i = 0; i < localNotes.length; i++) {
+        blockID = "#" + localNotes[i].time;
+        noteText = localNotes[i].note;
+        $(blockID).children('textarea').text(noteText);
+    }
 }
