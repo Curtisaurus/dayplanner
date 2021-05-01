@@ -9,7 +9,7 @@ The current, past, and future hours are color-coded so as to indicate user's pos
 
 Current day is updated on page load and also displayed in the page header.  Time stamps are updated for time-blocks and current day using the moment.js library.
 
-A save button is displayed next to each time-block which saves notes from its corresponding block once clicked.  User is alerted when and which note is saved.
+A save button is displayed next to each time-block which saves notes from its corresponding block once clicked.  User is alerted when and which note is saved. User can clear the text area and use save to clear a note.
 
 JavaScript code also implements jQuery libraries for DOM traversal and manipulation.
 
