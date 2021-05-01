@@ -65,7 +65,7 @@ function saveNote(scheduledNote) {
         localNotes.push(scheduledNote);
     }
 
-    alert("Note saved");
+    alert(scheduledNote.time +" note saved");
 
     localStorage.setItem("savedNotes", JSON.stringify(localNotes));
 
