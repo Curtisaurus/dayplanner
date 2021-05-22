@@ -1,5 +1,7 @@
 # Day Planner
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](license.txt)
+
 The basic functionality of this web application is to provide a 9am-5pm work day scheduler that save user notes to set hourly timeblock and provides saved notes on page reloads.  
 
 The current, past, and future hours are color-coded so as to indicate user's position in their schedule:
